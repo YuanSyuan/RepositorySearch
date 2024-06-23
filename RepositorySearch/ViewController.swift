@@ -18,8 +18,17 @@ class ViewController: UIViewController {
                     case .success(let repositories):
                         print("Repositories found: \(repositories.count)")
                         for repo in repositories {
-                            print("Name: \(repo.name), Description: \(repo.description ?? "No description"), Owner Icon: \(repo.owner.avatar_url)")
-                        }
+                                            print("""
+                                            Name: \(repo.name)
+                                            Description: \(repo.description ?? "No description")
+                                            Owner Icon: \(repo.owner.avatar_url)
+                                            Language: \(repo.language ?? "N/A")
+                                            Stars: \(repo.stargazers_count)
+                                            Watchers: \(repo.watchers_count)
+                                            Forks: \(repo.forks_count)
+                                            Issues: \(repo.open_issues_count)
+                                            """)
+                                        }
                     case .failure(let error):
                         print("Error: \(error.localizedDescription)")
                     }

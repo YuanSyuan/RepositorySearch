@@ -8,22 +8,6 @@
 import Foundation
 
 class GithubManager {
-    struct Owner: Codable {
-        let avatar_url: String
-    }
-
-    struct Repository: Codable {
-        let name: String
-        let description: String?
-        let owner: Owner
-    }
-
-    struct SearchResponse: Codable {
-        let total_count: Int
-        let incomplete_results: Bool
-        let items: [Repository]
-    }
-
     func searchRepositories(query: String, completion: @escaping (Result<[Repository], Error>) -> Void) {
         let urlString = "https://api.github.com/search/repositories?q=\(query)"
         guard let url = URL(string: urlString) else {
