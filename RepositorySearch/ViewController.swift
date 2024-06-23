@@ -121,7 +121,14 @@ extension ViewController: UITableViewDataSource {
 }
 
 extension ViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            tableView.deselectRow(at: indexPath, animated: true)
+            guard indexPath.section == 1 else { return }
+            
+            let detailVC = RepositoryDetailViewController()
+            detailVC.repository = repositories[indexPath.row]
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
 }
 // To-do
 /*

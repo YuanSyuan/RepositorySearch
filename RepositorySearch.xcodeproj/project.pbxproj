@@ -18,6 +18,7 @@
 		0587A27B2C28307100F8CE7E /* GithubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0587A27A2C28307100F8CE7E /* GithubModel.swift */; };
 		0587A27D2C2833EA00F8CE7E /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0587A27C2C2833EA00F8CE7E /* RepositoryCell.swift */; };
 		0587A27F2C2834AF00F8CE7E /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0587A27E2C2834AF00F8CE7E /* SearchBarCell.swift */; };
+		0587A2832C2837C800F8CE7E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0587A2822C2837C800F8CE7E /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0587A27A2C28307100F8CE7E /* GithubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubModel.swift; sourceTree = "<group>"; };
 		0587A27C2C2833EA00F8CE7E /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		0587A27E2C2834AF00F8CE7E /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
+		0587A2822C2837C800F8CE7E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				05493B072C22E21E005A368C /* AppDelegate.swift */,
 				05493B092C22E21E005A368C /* SceneDelegate.swift */,
+				0587A2822C2837C800F8CE7E /* DetailViewController.swift */,
 				05493B0B2C22E21E005A368C /* ViewController.swift */,
 				0587A27C2C2833EA00F8CE7E /* RepositoryCell.swift */,
 				0587A27E2C2834AF00F8CE7E /* SearchBarCell.swift */,
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0587A2832C2837C800F8CE7E /* DetailViewController.swift in Sources */,
 				05493B0C2C22E21E005A368C /* ViewController.swift in Sources */,
 				0587A27F2C2834AF00F8CE7E /* SearchBarCell.swift in Sources */,
 				0587A27D2C2833EA00F8CE7E /* RepositoryCell.swift in Sources */,
