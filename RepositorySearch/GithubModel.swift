@@ -8,21 +8,39 @@
 import Foundation
 
 struct Owner: Codable {
-    let avatar_url: String
+    let avatarURL: String
+
+    enum CodingKeys: String, CodingKey {
+        case avatarURL = "avatar_url"
+    }
 }
 
 struct Repository: Codable {
     let name: String
+    let fullName: String
     let description: String?
     let owner: Owner
     let language: String?
-    let stargazers_count: Int
-    let watchers_count: Int
-    let forks_count: Int
-    let open_issues_count: Int
+    let stargazersCount: Int
+    let watchersCount: Int
+    let forksCount: Int
+    let openIssuesCount: Int
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case fullName = "full_name"
+        case description
+        case owner
+        case language
+        case stargazersCount = "stargazers_count"
+        case watchersCount = "watchers_count"
+        case forksCount = "forks_count"
+        case openIssuesCount = "open_issues_count"
+    }
 }
 
 struct SearchResponse: Codable {
     let items: [Repository]
 }
+
 

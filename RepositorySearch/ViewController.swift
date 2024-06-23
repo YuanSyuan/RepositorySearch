@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: "RepositoryCell")
         tableView.register(SearchBarCell.self, forCellReuseIdentifier: "SearchBarCell")
         
-        githubManager.searchRepositories(query: "apple") { result in
+        githubManager.searchRepositories(query: "swift") { result in
             switch result {
             case .success(let repositories):
                 
@@ -38,12 +38,12 @@ class ViewController: UIViewController {
                     print("""
                                             Name: \(repo.name)
                                             Description: \(repo.description ?? "No description")
-                                            Owner Icon: \(repo.owner.avatar_url)
+                                            Owner Icon: \(repo.owner.avatarURL)
                                             Language: \(repo.language ?? "N/A")
-                                            Stars: \(repo.stargazers_count)
-                                            Watchers: \(repo.watchers_count)
-                                            Forks: \(repo.forks_count)
-                                            Issues: \(repo.open_issues_count)
+                                            Stars: \(repo.stargazersCount)
+                                            Watchers: \(repo.watchersCount)
+                                            Forks: \(repo.forksCount)
+                                            Issues: \(repo.openIssuesCount)
                                             """)
                 }
             case .failure(let error):
@@ -104,9 +104,9 @@ extension ViewController: UITableViewDataSource {
             }
             
             let repository = repositories[indexPath.row]
-            cell.nameLabel.text = repository.name
+            cell.nameLabel.text = repository.fullName
             cell.descriptionLabel.text = repository.description ?? "No description"
-            if let url = URL(string: repository.owner.avatar_url) {
+            if let url = URL(string: repository.owner.avatarURL) {
                 DispatchQueue.global().async {
                     if let data = try? Data(contentsOf: url) {
                         DispatchQueue.main.async {
@@ -125,7 +125,7 @@ extension ViewController: UITableViewDelegate {
             tableView.deselectRow(at: indexPath, animated: true)
             guard indexPath.section == 1 else { return }
             
-            let detailVC = RepositoryDetailViewController()
+            let detailVC = DetailViewController()
             detailVC.repository = repositories[indexPath.row]
             navigationController?.pushViewController(detailVC, animated: true)
         }
