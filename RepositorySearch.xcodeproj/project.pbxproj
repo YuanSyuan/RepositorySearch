@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		050A82F12C2401C700C6B9E2 /* GithubManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050A82F02C2401C700C6B9E2 /* GithubManager.swift */; };
 		05493B082C22E21E005A368C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05493B072C22E21E005A368C /* AppDelegate.swift */; };
 		05493B0A2C22E21E005A368C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05493B092C22E21E005A368C /* SceneDelegate.swift */; };
 		05493B0C2C22E21E005A368C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05493B0B2C22E21E005A368C /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		050A82F02C2401C700C6B9E2 /* GithubManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubManager.swift; sourceTree = "<group>"; };
 		05493B042C22E21E005A368C /* RepositorySearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RepositorySearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05493B072C22E21E005A368C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05493B092C22E21E005A368C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				05493B072C22E21E005A368C /* AppDelegate.swift */,
 				05493B092C22E21E005A368C /* SceneDelegate.swift */,
 				05493B0B2C22E21E005A368C /* ViewController.swift */,
+				050A82F02C2401C700C6B9E2 /* GithubManager.swift */,
 				05493B0D2C22E21E005A368C /* Main.storyboard */,
 				05493B132C22E221005A368C /* Assets.xcassets */,
 				05493B152C22E221005A368C /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				05493B0C2C22E21E005A368C /* ViewController.swift in Sources */,
 				05493B082C22E21E005A368C /* AppDelegate.swift in Sources */,
 				05493B0A2C22E21E005A368C /* SceneDelegate.swift in Sources */,
+				050A82F12C2401C700C6B9E2 /* GithubManager.swift in Sources */,
 				05493B122C22E21E005A368C /* RepositorySearch.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
