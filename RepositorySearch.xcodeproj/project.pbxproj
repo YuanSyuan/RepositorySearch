@@ -16,6 +16,8 @@
 		05493B142C22E221005A368C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05493B132C22E221005A368C /* Assets.xcassets */; };
 		05493B172C22E221005A368C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05493B152C22E221005A368C /* LaunchScreen.storyboard */; };
 		0587A27B2C28307100F8CE7E /* GithubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0587A27A2C28307100F8CE7E /* GithubModel.swift */; };
+		0587A27D2C2833EA00F8CE7E /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0587A27C2C2833EA00F8CE7E /* RepositoryCell.swift */; };
+		0587A27F2C2834AF00F8CE7E /* SearchBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0587A27E2C2834AF00F8CE7E /* SearchBarCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		05493B162C22E221005A368C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05493B182C22E221005A368C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0587A27A2C28307100F8CE7E /* GithubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubModel.swift; sourceTree = "<group>"; };
+		0587A27C2C2833EA00F8CE7E /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		0587A27E2C2834AF00F8CE7E /* SearchBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				05493B072C22E21E005A368C /* AppDelegate.swift */,
 				05493B092C22E21E005A368C /* SceneDelegate.swift */,
 				05493B0B2C22E21E005A368C /* ViewController.swift */,
+				0587A27C2C2833EA00F8CE7E /* RepositoryCell.swift */,
+				0587A27E2C2834AF00F8CE7E /* SearchBarCell.swift */,
 				050A82F02C2401C700C6B9E2 /* GithubManager.swift */,
 				0587A27A2C28307100F8CE7E /* GithubModel.swift */,
 				05493B0D2C22E21E005A368C /* Main.storyboard */,
@@ -148,6 +154,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				05493B0C2C22E21E005A368C /* ViewController.swift in Sources */,
+				0587A27F2C2834AF00F8CE7E /* SearchBarCell.swift in Sources */,
+				0587A27D2C2833EA00F8CE7E /* RepositoryCell.swift in Sources */,
 				05493B082C22E21E005A368C /* AppDelegate.swift in Sources */,
 				05493B0A2C22E21E005A368C /* SceneDelegate.swift in Sources */,
 				050A82F12C2401C700C6B9E2 /* GithubManager.swift in Sources */,
