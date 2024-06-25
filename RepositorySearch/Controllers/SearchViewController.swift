@@ -26,6 +26,9 @@ class SearchViewController: UIViewController {
         
         tableView.register(RepositoryCell.self, forCellReuseIdentifier: "RepositoryCell")
         tableView.register(SearchBarCell.self, forCellReuseIdentifier: "SearchBarCell")
+        
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = .black
     }
     
     private func setupTableView() {
@@ -104,17 +107,14 @@ extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchBarCell", for: indexPath) as? SearchBarCell else {
-                return UITableViewCell()
-            }
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "SearchBarCell", for: indexPath) as? SearchBarCell else { return UITableViewCell()}
             
             cell.searchBar.delegate = self
+            
             return cell
         } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell", for: indexPath) as? RepositoryCell else {
-                return UITableViewCell()
-            }
-
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell", for: indexPath) as? RepositoryCell else { return UITableViewCell()}
+            
             let repository = repositories[indexPath.row]
             cell.configureCell(with: repository)
             
@@ -162,27 +162,14 @@ extension SearchViewController: UISearchBarDelegate {
     }
 }
 
-
-// To-do
-/*
- 週六
- 1. 先刻 UI 4h
- MainVC
- - tableView, tableView header, two cells(search bar, search cell)
- 
- DetailVC
- - 比較簡單
- 
- 2. 2h
- 串 github API
- 修改兩個頁面的顯示邏輯
- 
- 3. 2h
- MJRefresh 完成下拉刷新
- alert handle
- 
- 週日
- 4. 3h
- Refactor
- 
- */
+//MARK: - UIScrollViewDelegate
+extension SearchViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        if offsetY > 0 {
+            navigationItem.title = "Repository Search"
+            navigationController?.navigationBar.barTintColor = UIColor.black
+            navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+        } else { }
+    }
+}
