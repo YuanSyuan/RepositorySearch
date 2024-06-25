@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RepositoryCell: UITableViewCell {
     let avatarImageView: UIImageView = {
@@ -47,22 +48,31 @@ class RepositoryCell: UITableViewCell {
         addSubview(avatarImageView)
         addSubview(nameLabel)
         addSubview(descriptionLabel)
-  
+        
         
         NSLayoutConstraint.activate([
-                    avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-                    avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-                    avatarImageView.widthAnchor.constraint(equalToConstant: 80),
-                    avatarImageView.heightAnchor.constraint(equalToConstant: 80),
-                    
-                    nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
-                    nameLabel.bottomAnchor.constraint(equalTo: centerYAnchor),
-                    nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-                    
-                    descriptionLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
-                    descriptionLabel.topAnchor.constraint(equalTo: centerYAnchor),
-                    descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-                    descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -8)
-                ])
+            avatarImageView.topAnchor.constraint(greaterThanOrEqualTo: topAnchor, constant: 8),
+            avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            avatarImageView.widthAnchor.constraint(equalToConstant: 80),
+            avatarImageView.heightAnchor.constraint(equalToConstant: 80),
+            
+            nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
+            nameLabel.bottomAnchor.constraint(equalTo: centerYAnchor),
+            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            
+            descriptionLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
+            descriptionLabel.topAnchor.constraint(equalTo: centerYAnchor),
+            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -8)
+        ])
+    }
+    
+    func configureCell(with repository: Repository) {
+        nameLabel.text = repository.fullName
+        descriptionLabel.text = repository.description ?? "No description"
+        if let url = URL(string: repository.owner.avatarURL) {
+            avatarImageView.kf.setImage(with: url)
+        }
     }
 }

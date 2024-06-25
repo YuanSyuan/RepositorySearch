@@ -27,11 +27,8 @@ struct Repository: Codable {
     let openIssuesCount: Int
 
     enum CodingKeys: String, CodingKey {
-        case name
+        case name, description, owner, language
         case fullName = "full_name"
-        case description
-        case owner
-        case language
         case stargazersCount = "stargazers_count"
         case watchersCount = "watchers_count"
         case forksCount = "forks_count"
