@@ -56,7 +56,6 @@ class ViewController: UIViewController {
     private func setupTableView() {
         view.addSubview(tableView)
         
-        // Set table view constraints to fill the whole view
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -65,17 +64,16 @@ class ViewController: UIViewController {
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
         
-        // Set table header view with a label
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 60))
         let headerLabel = UILabel()
         headerLabel.text = "Repository Search"
-        headerLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        headerLabel.font = UIFont.boldSystemFont(ofSize: 36)
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(headerLabel)
         
         NSLayoutConstraint.activate([
-            headerLabel.centerXAnchor.constraint(equalTo: headerView.centerXAnchor),
-            headerLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
+            headerLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+            headerLabel.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
         ])
         
         tableView.tableHeaderView = headerView
@@ -129,6 +127,15 @@ extension ViewController: UITableViewDelegate {
             detailVC.repository = repositories[indexPath.row]
             navigationController?.pushViewController(detailVC, animated: true)
         }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.section == 0 {
+                    return 50
+                } else {
+                    return 100
+                }
+            }
 }
 // To-do
 /*

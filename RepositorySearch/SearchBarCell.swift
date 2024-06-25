@@ -25,6 +25,7 @@ class SearchBarCell: UITableViewCell {
     
     private func setupViews() {
         contentView.addSubview(searchBar)
+        searchBar.placeholder = "請輸入關鍵字搜尋"
         
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: contentView.topAnchor),

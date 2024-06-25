@@ -12,7 +12,7 @@ class RepositoryCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-        imageView.layer.cornerRadius = 8
+        imageView.layer.cornerRadius = 40
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -29,6 +29,8 @@ class RepositoryCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .gray
+        label.numberOfLines = 2
+        label.lineBreakMode = .byTruncatingTail
         return label
     }()
     
@@ -45,22 +47,22 @@ class RepositoryCell: UITableViewCell {
         addSubview(avatarImageView)
         addSubview(nameLabel)
         addSubview(descriptionLabel)
+  
         
         NSLayoutConstraint.activate([
-            avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            avatarImageView.widthAnchor.constraint(equalToConstant: 50),
-            avatarImageView.heightAnchor.constraint(equalToConstant: 50),
-            
-            nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            
-            descriptionLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
-            descriptionLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 8),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            descriptionLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16)
-        ])
+                    avatarImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+                    avatarImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+                    avatarImageView.widthAnchor.constraint(equalToConstant: 80),
+                    avatarImageView.heightAnchor.constraint(equalToConstant: 80),
+                    
+                    nameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
+                    nameLabel.bottomAnchor.constraint(equalTo: centerYAnchor),
+                    nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+                    
+                    descriptionLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 16),
+                    descriptionLabel.topAnchor.constraint(equalTo: centerYAnchor),
+                    descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+                    descriptionLabel.bottomAnchor.constraint(lessThanOrEqualTo: bottomAnchor, constant: -8)
+                ])
     }
 }
- 
